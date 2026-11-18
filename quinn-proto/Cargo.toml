@@ -1,14 +1,18 @@
 [package]
-name = "quinn-proto"
-version = "0.11.19"
+name = "freenet-quinn-proto"
+version = "0.11.13"
 edition.workspace = true
 rust-version.workspace = true
 license.workspace = true
 repository.workspace = true
-description = "State machine for the QUIC transport protocol"
+description = "TEMPORARY FORK of quinn-proto carrying unreleased upstream fixes (quinn-rs/quinn#2987). Do not depend on it: use upstream quinn-proto."
+readme = "README.md"
 keywords.workspace = true
 categories.workspace = true
 workspace = ".."
+
+[lib]
+name = "quinn_proto"
 
 [features]
 # NOTE: Please keep this in sync with the feature list in `.github/workflows/codecov.yml`, see

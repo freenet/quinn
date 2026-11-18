@@ -1,16 +1,19 @@
 [package]
-name = "quinn"
-version = "0.11.12"
+name = "freenet-quinn"
+version = "0.11.13"
 license.workspace = true
 repository.workspace = true
-description = "Versatile QUIC transport protocol implementation"
-readme = "../README.md"
+description = "TEMPORARY FORK of quinn carrying unreleased upstream fixes (quinn-rs/quinn#2987). Do not depend on it: use upstream quinn."
+readme = "README.md"
 keywords.workspace = true
 categories.workspace = true
 workspace = ".."
 edition.workspace = true
 rust-version.workspace = true
 
+
+[lib]
+name = "quinn"
 
 [features]
 # NOTE: Please keep this in sync with the feature list in `.github/workflows/codecov.yml`, see
@@ -59,7 +62,7 @@ bytes = { workspace = true }
 futures-io = { workspace = true, optional = true }
 rustc-hash = { workspace = true }
 pin-project-lite = { workspace = true }
-proto = { package = "quinn-proto", path = "../quinn-proto", version = "0.11.18", default-features = false }
+proto = { package = "freenet-quinn-proto", path = "../quinn-proto", version = "=0.11.13", default-features = false }
 rustls = { workspace = true, optional = true }
 smol = { workspace = true, optional = true }
 thiserror = { workspace = true }
