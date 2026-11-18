@@ -454,8 +454,8 @@ dependencies = [
  "anyhow",
  "bytes",
  "clap",
+ "freenet-quinn",
  "hdrhistogram",
- "quinn",
  "rcgen",
  "rustls",
  "tokio",
@@ -522,7 +522,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "bytes",
- "quinn",
+ "freenet-quinn",
  "rcgen",
  "rustls",
 ]
@@ -1064,6 +1064,69 @@ dependencies = [
 ]
 
 [[package]]
+name = "freenet-quinn"
+version = "0.11.13"
+dependencies = [
+ "anyhow",
+ "async-io",
+ "async-std",
+ "bencher",
+ "bytes",
+ "cfg_aliases",
+ "clap",
+ "crc",
+ "directories-next",
+ "freenet-quinn-proto",
+ "futures-io",
+ "pin-project-lite",
+ "quinn-udp",
+ "rand 0.10.3",
+ "rcgen",
+ "rustc-hash",
+ "rustls",
+ "smol",
+ "socket2 0.5.10",
+ "thiserror 2.0.21",
+ "tokio",
+ "tracing",
+ "tracing-futures",
+ "tracing-subscriber",
+ "url",
+ "web-time",
+]
+
+[[package]]
+name = "freenet-quinn-proto"
+version = "0.11.13"
+dependencies = [
+ "arbitrary",
+ "assert_matches",
+ "aws-lc-rs",
+ "bytes",
+ "fastbloom",
+ "getrandom 0.4.3",
+ "hex-literal",
+ "lazy_static",
+ "lru-slab",
+ "qlog",
+ "rand 0.10.3",
+ "rand_pcg",
+ "rcgen",
+ "ring",
+ "rustc-hash",
+ "rustls",
+ "rustls-pki-types",
+ "rustls-platform-verifier",
+ "slab",
+ "thiserror 2.0.21",
+ "tinyvec",
+ "tracing",
+ "tracing-subscriber",
+ "wasm-bindgen-test",
+ "web-time",
+]
+
+[[package]]
 name = "fs_extra"
 version = "1.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1132,8 +1195,8 @@ name = "fuzz"
 version = "0.1.0"
 dependencies = [
  "arbitrary",
+ "freenet-quinn-proto",
  "libfuzzer-sys",
- "quinn-proto",
 ]
 
 [[package]]
@@ -1905,9 +1968,9 @@ dependencies = [
  "bytes",
  "clap",
  "console-subscriber",
+ "freenet-quinn",
+ "freenet-quinn-proto",
  "hdrhistogram",
- "quinn",
- "quinn-proto",
  "rcgen",
  "rustls",
  "serde",
@@ -2072,69 +2135,6 @@ dependencies = [
  "serde_json",
  "serde_with",
  "smallvec",
-]
-
-[[package]]
-name = "quinn"
-version = "0.11.12"
-dependencies = [
- "anyhow",
- "async-io",
- "async-std",
- "bencher",
- "bytes",
- "cfg_aliases",
- "clap",
- "crc",
- "directories-next",
- "futures-io",
- "pin-project-lite",
- "quinn-proto",
- "quinn-udp",
- "rand 0.10.3",
- "rcgen",
- "rustc-hash",
- "rustls",
- "smol",
- "socket2 0.6.5",
- "thiserror 2.0.21",
- "tokio",
- "tracing",
- "tracing-futures",
- "tracing-subscriber",
- "url",
- "web-time",
-]
-
-[[package]]
-name = "quinn-proto"
-version = "0.11.19"
-dependencies = [
- "arbitrary",
- "assert_matches",
- "aws-lc-rs",
- "bytes",
- "fastbloom",
- "getrandom 0.4.3",
- "hex-literal",
- "lazy_static",
- "lru-slab",
- "qlog",
- "rand 0.10.3",
- "rand_pcg",
- "rcgen",
- "ring",
- "rustc-hash",
- "rustls",
- "rustls-pki-types",
- "rustls-platform-verifier",
- "slab",
- "thiserror 2.0.21",
- "tinyvec",
- "tracing",
- "tracing-subscriber",
- "wasm-bindgen-test",
- "web-time",
 ]
 
 [[package]]
